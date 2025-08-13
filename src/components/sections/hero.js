@@ -62,7 +62,10 @@ const Hero = () => {
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Evance Odhiambo.</h2>;
   const three = (
-    <h3 className="big-heading">I build AI-powered solutions and educate the next generation.</h3>
+    <h3 className="big-heading">
+      Full-stack React MERN developer and educator specializing in AI-powered solutions and
+      developer education.
+    </h3>
   );
   const four = (
     <>
@@ -70,7 +73,7 @@ const Hero = () => {
         I'm an AI-focused Software Engineer and Digital Skills Educator specializing in building
         innovative tech solutions and advancing digital literacy across Africa. Currently, I'm
         focused on training over 2,000 youths in digital skills and freelancing at{' '}
-        <a href="https://ajira.go.ke/" target="_blank" rel="noreferrer">
+        <a href="https://ajiradigital.go.ke/" target="_blank" rel="noreferrer">
           Emobilis - Ajira Digital Program
         </a>
         .
