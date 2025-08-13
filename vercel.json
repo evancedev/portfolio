@@ -1,20 +1,9 @@
 {
+  "framework": "gatsby",
   "buildCommand": "yarn build",
   "outputDirectory": "public",
-  "framework": "gatsby",
   "installCommand": "yarn install",
-  "devCommand": "yarn develop",
-  "functions": {
-    "app/api/**/*.js": {
-      "runtime": "nodejs16.x"
-    }
-  },
   "env": {
     "NODE_OPTIONS": "--openssl-legacy-provider"
-  },
-  "build": {
-    "env": {
-      "NODE_OPTIONS": "--openssl-legacy-provider"
-    }
   }
 }
