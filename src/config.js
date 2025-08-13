@@ -7,7 +7,7 @@ module.exports = {
       url: 'https://github.com/evansodhams',
     },
     {
-      name: 'LinkedIn',
+      name: 'Linkedin',
       url: 'https://www.linkedin.com/in/evance-okoth/',
     },
     {
