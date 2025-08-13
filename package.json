@@ -1,16 +1,22 @@
 {
   "name": "v4",
-  "description": "Personal Website V4",
+  "description": "Evance Odhiambo's AI-focused Portfolio",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "author": "Evance Odhiambo <evansodhams@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchiang7/v4"
+    "url": "https://github.com/EvansOdhams/portfolio"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "portfolio",
+    "ai",
+    "react"
   ],
   "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "browserslist": "> 0.25%, not dead",
   "scripts": {
     "build": "gatsby build",

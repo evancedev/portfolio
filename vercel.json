@@ -8,5 +8,13 @@
     "app/api/**/*.js": {
       "runtime": "nodejs16.x"
     }
+  },
+  "env": {
+    "NODE_OPTIONS": "--openssl-legacy-provider"
+  },
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--openssl-legacy-provider"
+    }
   }
 }
