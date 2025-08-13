@@ -1,0 +1,12 @@
+{
+  "buildCommand": "yarn build",
+  "outputDirectory": "public",
+  "framework": "gatsby",
+  "installCommand": "yarn install",
+  "devCommand": "yarn develop",
+  "functions": {
+    "app/api/**/*.js": {
+      "runtime": "nodejs16.x"
+    }
+  }
+}
