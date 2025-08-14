@@ -146,29 +146,28 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! I'm Evance Odhiambo, an AI-focused Software Engineer and Digital Skills
-              Educator passionate about building innovative tech solutions and advancing digital
-              literacy across Africa. My journey in technology began during my Bachelor's in
-              Technology Education at Moi University, where I discovered my passion for programming
-              and digital innovation.
+              I’m an AI Engineer and Full-Stack Software Engineer with a strong knack for developing
+              scalable applications using MERN stack, passionate about designing and building
+              impactful, user-focused solutions. I thrive on integrating artificial intelligence and
+              modern web technologies to solve real-world challenges and drive meaningful change.
             </p>
 
             <p>
-              Currently pursuing my Master's in Artificial Intelligence at Open University of Kenya,
-              I specialize in ML model development, data annotation, and algorithm design. I've had
-              the privilege of working as a <a href="#jobs">Digital Skills Trainer at Emobilis</a>,{' '}
+              With a Masters Degree in Artificial Intelligence, I specialize in ML model
+              development, data annotation, and algorithm design. I've had the privilege of working
+              as a <a href="#jobs">Digital Skills Trainer at Emobilis</a>,{' '}
               <a href="#jobs">Computer Science Lecturer at Intel College</a>, and{' '}
               <a href="#jobs">Founder of Qbitsage Solution</a> and{' '}
-              <a href="#jobs">Co-Founder of Cloud 7</a>. My main focus these days is training over
-              2,000 youths in digital skills, freelancing, and AI-powered work.
+              <a href="#jobs">Co-Founder of Cloud 7</a>. My main focus is in building scalable
+              applications and integrating AI into them to solve real-world problems.
             </p>
 
             <p>
               I've developed several AI-powered projects including <a href="#projects">Plymus</a>{' '}
               (AI resume builder), <a href="#projects">UnifiedGigs</a> (job aggregation platform),
               and <a href="#projects">IntelliCreate</a> (AI video creation platform). I'm also
-              certified in various AI and digital skills including 3D Point-Cloud LiDAR Annotation
-              from Stanford University.
+              certified in various AI and digital skills including Software Engineering and Data
+              Science from ALX Africa.
             </p>
 
             <p>Here are a few technologies I've been working with recently:</p>

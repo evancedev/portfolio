@@ -67,9 +67,9 @@ const Hero = () => {
       <p>
         I'm an AI-focused Software Engineer and Digital Skills Educator specializing in building
         innovative tech solutions and advancing digital literacy across Africa. Currently, I'm
-        focused on training over 2,000 youths in digital skills and freelancing at{' '}
+        focused on training over young people in digital skills and freelancing under the{' '}
         <a href="https://ajiradigital.go.ke/" target="_blank" rel="noreferrer">
-          Emobilis - Ajira Digital Program
+          Ajira Digital Program
         </a>
         .
       </p>
