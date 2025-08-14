@@ -6,6 +6,7 @@
 
 const path = require('path');
 const _ = require('lodash');
+const webpack = require('webpack');
 
 // Add GraphQL schema customization
 exports.createSchemaCustomization = ({ actions }) => {
@@ -106,6 +107,31 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     });
   }
 
+  // Add specific configuration for build stage to handle crypto issues
+  if (stage === 'build-javascript') {
+    actions.setWebpackConfig({
+      resolve: {
+        fallback: {
+          crypto: require.resolve('crypto-browserify'),
+          stream: require.resolve('stream-browserify'),
+          buffer: require.resolve('buffer'),
+          process: require.resolve('process/browser'),
+          util: require.resolve('util'),
+          assert: require.resolve('assert'),
+          fs: false,
+          path: require.resolve('path-browserify'),
+          os: require.resolve('os-browserify/browser'),
+        },
+      },
+      plugins: [
+        new webpack.ProvidePlugin({
+          Buffer: ['buffer', 'Buffer'],
+          process: 'process/browser',
+        }),
+      ],
+    });
+  }
+
   actions.setWebpackConfig({
     resolve: {
       alias: {
@@ -118,6 +144,26 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         '@styles': path.resolve(__dirname, 'src/styles'),
         '@utils': path.resolve(__dirname, 'src/utils'),
       },
+      fallback: {
+        crypto: require.resolve('crypto-browserify'),
+        stream: require.resolve('stream-browserify'),
+        buffer: require.resolve('buffer'),
+        process: require.resolve('process/browser'),
+        util: require.resolve('util'),
+        assert: require.resolve('assert'),
+        fs: false,
+        path: require.resolve('path-browserify'),
+        os: require.resolve('os-browserify/browser'),
+      },
+    },
+    plugins: [
+      new webpack.ProvidePlugin({
+        Buffer: ['buffer', 'Buffer'],
+        process: 'process/browser',
+      }),
+    ],
+    output: {
+      hashFunction: 'xxhash64',
     },
   });
 };

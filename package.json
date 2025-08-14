@@ -15,11 +15,12 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=16.0.0"
+    "node": "16.20.2"
   },
   "browserslist": "> 0.25%, not dead",
   "scripts": {
     "build": "gatsby build",
+    "build:vercel": "cross-env NODE_OPTIONS=--openssl-legacy-provider gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
@@ -38,7 +39,10 @@
   },
   "dependencies": {
     "animejs": "^3.1.0",
+    "assert": "^2.1.0",
     "babel-plugin-styled-components": "^1.12.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.1",
     "gatsby": "^3.4.1",
     "gatsby-plugin-google-analytics": "^3.4.0",
     "gatsby-plugin-image": "^1.4.0",
@@ -57,14 +61,19 @@
     "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.4.0",
     "lodash": "^4.17.19",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "prismjs": "^1.27.0",
+    "process": "^0.11.10",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.3.0",
     "scrollreveal": "^4.0.5",
-    "styled-components": "^5.3.0"
+    "stream-browserify": "^3.0.0",
+    "styled-components": "^5.3.0",
+    "util": "^0.12.5"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
