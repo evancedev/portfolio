@@ -1,10 +1,10 @@
 ---
 date: '2023-07-01'
 title: 'Digital Skills Trainer'
-company: 'Emobilis - Ajira Digital Program'
+company: 'Ajira Digital Program'
 location: 'Migori, Kenya'
 range: 'July 2023 - Present'
-url: 'https://ajira.go.ke/'
+url: 'https://ajiradigital.go.ke/'
 ---
 
 - Train and mentor over 2,000 youths in digital skills, freelancing, and AI-powered work across institutions and virtual platforms

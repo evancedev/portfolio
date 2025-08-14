@@ -155,10 +155,10 @@ const About = () => {
             <p>
               With a Masters Degree in Artificial Intelligence, I specialize in ML model
               development, data annotation, and algorithm design. I've had the privilege of working
-              as a <a href="#jobs">Digital Skills Trainer at Emobilis</a>,{' '}
+              as a <a href="#jobs">Digital Skills Trainer under the Ajira Digital Program</a>,{' '}
               <a href="#jobs">Computer Science Lecturer at Intel College</a>, and{' '}
               <a href="#jobs">Founder of Qbitsage Solution</a> and{' '}
-              <a href="#jobs">Co-Founder of Cloud 7</a>. My main focus is in building scalable
+              <a href="#jobs">Co-Founder of Cloud 7</a>. My main focus is in building scalable,
               applications and integrating AI into them to solve real-world problems.
             </p>
 

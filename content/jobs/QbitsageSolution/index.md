@@ -4,7 +4,7 @@ title: 'Founder'
 company: 'Qbitsage Solution'
 location: 'Nairobi, Kenya'
 range: 'January 2023 - Present'
-url: '#'
+url: 'https://qbitsage.com/'
 ---
 
 - Founded and lead a software development and consulting company specializing in AI-powered solutions
