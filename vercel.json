@@ -3,15 +3,15 @@
   "buildCommand": "yarn build:vercel",
   "outputDirectory": "public",
   "installCommand": "yarn install",
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs16.x"
-    }
-  },
   "build": {
     "env": {
-      "NODE_VERSION": "16",
+      "NODE_VERSION": "16.20.2",
       "NODE_OPTIONS": "--openssl-legacy-provider"
+    }
+  },
+  "functions": {
+    "**/*.js": {
+      "runtime": "nodejs16.x"
     }
   }
 }

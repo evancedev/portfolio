@@ -107,31 +107,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     });
   }
 
-  // Add specific configuration for build stage to handle crypto issues
-  if (stage === 'build-javascript') {
-    actions.setWebpackConfig({
-      resolve: {
-        fallback: {
-          crypto: require.resolve('crypto-browserify'),
-          stream: require.resolve('stream-browserify'),
-          buffer: require.resolve('buffer'),
-          process: require.resolve('process/browser'),
-          util: require.resolve('util'),
-          assert: require.resolve('assert'),
-          fs: false,
-          path: require.resolve('path-browserify'),
-          os: require.resolve('os-browserify/browser'),
-        },
-      },
-      plugins: [
-        new webpack.ProvidePlugin({
-          Buffer: ['buffer', 'Buffer'],
-          process: 'process/browser',
-        }),
-      ],
-    });
-  }
-
+  // Consolidated webpack configuration for all stages
   actions.setWebpackConfig({
     resolve: {
       alias: {
@@ -162,8 +138,6 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         process: 'process/browser',
       }),
     ],
-    output: {
-      hashFunction: 'xxhash64',
-    },
+    // Removed hashFunction to avoid cache conflicts
   });
 };

@@ -20,7 +20,7 @@
   "browserslist": "> 0.25%, not dead",
   "scripts": {
     "build": "gatsby build",
-    "build:vercel": "cross-env NODE_OPTIONS=--openssl-legacy-provider gatsby build",
+    "build:vercel": "cross-env NODE_VERSION=16.20.2 NODE_OPTIONS=--openssl-legacy-provider gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",

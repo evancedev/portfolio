@@ -1,0 +1,9 @@
+.cache/
+node_modules/
+.git/
+.husky/
+*.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local 
