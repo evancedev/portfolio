@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
-import { GlobalStyle, theme } from '@styles';
+import { GlobalStyle as GlobalStyleBase, theme } from '@styles';
+
+// Create a styled component that properly receives the theme
+const StyledGlobalStyle = () => <GlobalStyleBase />;
 
 const StyledContent = styled.div`
   display: flex;
@@ -52,7 +55,7 @@ const Layout = ({ children, location }) => {
 
       <div id="root">
         <ThemeProvider theme={theme}>
-          <GlobalStyle />
+          <StyledGlobalStyle />
 
           <a className="skip-to-content" href="#content">
             Skip to Content

@@ -5,14 +5,19 @@
  */
 
 import React from 'react';
-import { GlobalStyle } from './src/styles';
+import { GlobalStyle as GlobalStyleBase } from './src/styles';
+import { ThemeProvider } from 'styled-components';
+import theme from './src/styles/theme';
 import Layout from './src/components/layout';
 
+// Create a styled component that properly receives the theme
+const GlobalStyle = () => <GlobalStyleBase />;
+
 export const wrapPageElement = ({ element, props }) => (
-  <>
+  <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Layout {...props}>{element}</Layout>
-  </>
+  </ThemeProvider>
 );
 
 // Prevent default scroll restoration to fix page transitions

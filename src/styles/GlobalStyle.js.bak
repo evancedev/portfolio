@@ -25,34 +25,42 @@ const GlobalStyle = createGlobalStyle`
     color: var(--lightest-slate);
   }
 
+  /* Provide basic, default focus styles.*/
   :focus {
     outline: 2px dashed var(--green);
     outline-offset: 3px;
   }
 
+  /*
+    Remove default focus styles for mouse users ONLY if
+    :focus-visible is supported on this platform.
+  */
   :focus:not(:focus-visible) {
     outline: none;
     outline-offset: 0px;
   }
 
+  /*
+    Optionally: If :focus-visible is supported on this
+    platform, provide enhanced focus styles for keyboard
+    focus.
+  */
   :focus-visible {
     outline: 2px dashed var(--green);
     outline-offset: 3px;
   }
 
+  /* Scrollbar Styles */
   html {
     scrollbar-width: thin;
     scrollbar-color: var(--dark-slate) var(--navy);
   }
-  
   ::-webkit-scrollbar {
     width: 12px;
   }
-  
   ::-webkit-scrollbar-track {
     background: var(--navy);
   }
-  
   ::-webkit-scrollbar-thumb {
     background-color: var(--dark-slate);
     border: 3px solid var(--navy);
@@ -257,7 +265,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     &.inline-link {
-      ${({ theme }) => theme?.mixins?.inlineLink || 'color: var(--green); text-decoration: none;'}
+      ${({ theme }) => theme.mixins.inlineLink};
     }
   }
 
@@ -289,92 +297,154 @@ const GlobalStyle = createGlobalStyle`
     &:last-of-type {
       margin: 0;
     }
-  }
 
-  ul, ol {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
+    & > a {
+      ${({ theme }) => theme.mixins.inlineLink};
+    }
 
-  .fadeup-enter {
-    opacity: 0.01;
-    transform: translateY(20px);
-    transition: opacity 300ms var(--easing), transform 300ms var(--easing);
-  }
-
-  .fadeup-enter-active {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: opacity 300ms var(--easing), transform 300ms var(--easing);
-  }
-
-  .fade-enter {
-    opacity: 0;
-  }
-  .fade-enter-active {
-    opacity: 1;
-    transition: opacity 0.4s ease-in-out;
-  }
-  .fade-exit {
-    opacity: 1;
-  }
-  .fade-exit-active {
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-  }
-
-  .skip-to-content {
-    ${({ theme }) =>
-    theme?.mixins?.button ||
-      `
-      display: inline-block;
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 99;
-      padding: 1rem 1.5rem;
-      color: var(--green);
-      background-color: transparent;
-      border: 1px solid var(--green);
-      border-radius: var(--border-radius);
-      font-family: var(--font-mono);
+    & > code {
+      background-color: var(--light-navy);
+      color: var(--white);
       font-size: var(--fz-sm);
-      line-height: 1;
-      text-decoration: none;
-      cursor: pointer;
-      transition: var(--transition);
-      
-      &:hover,
-      &:focus {
-        background-color: var(--green-tint);
-        outline: none;
-      }
-    `};
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 100;
-    padding: 1.5rem 2rem;
-    color: var(--green);
-    background-color: transparent;
-    border: 1px solid var(--green);
-    border-radius: var(--border-radius);
-    font-family: var(--font-mono);
-    font-size: var(--fz-sm);
-    line-height: 1;
-    text-decoration: none;
-    cursor: pointer;
-    transition: var(--transition);
-    
-    &:hover,
-    &:focus {
-      background-color: var(--green-tint);
-      outline: none;
+      border-radius: var(--border-radius);
+      padding: 0.3em 0.5em;
     }
   }
 
+  ul {
+    &.fancy-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-size: var(--fz-lg);
+      li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+        &:before {
+          content: '▹';
+          position: absolute;
+          left: 0;
+          color: var(--green);
+        }
+      }
+    }
+  }
+
+  blockquote {
+    border-left-color: var(--green);
+    border-left-style: solid;
+    border-left-width: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 1.5rem;
+
+    p {
+      font-style: italic;
+      font-size: 24px;
+    }
+  }
+
+  hr {
+    background-color: var(--lightest-navy);
+    height: 1px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    margin: 1rem;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: var(--fz-md);
+  }
+
+  .skip-to-content {
+    ${({ theme }) => theme.mixins.button};
+    position: absolute;
+    top: auto;
+    left: -999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -99;
+
+    &:hover,
+    &:focus {
+      background-color: var(--green);
+      color: var(--navy);
+      top: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+      overflow: auto;
+      z-index: 99;
+      box-shadow: none;
+      transform: none;
+    }
+  }
+
+  #logo {
+    color: var(--green);
+  }
+
+  .overline {
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: var(--fz-md);
+    font-weight: 400;
+  }
+
+  .subtitle {
+    color: var(--green);
+    margin: 0 0 20px 0;
+    font-size: var(--fz-md);
+    font-family: var(--font-mono);
+    font-weight: 400;
+    line-height: 1.5;
+    @media (max-width: 1080px) {
+      font-size: var(--fz-sm);
+    }
+    @media (max-width: 768px) {
+      font-size: var(--fz-xs);
+    }
+
+    a {
+      ${({ theme }) => theme.mixins.inlineLink};
+      line-height: 1.5;
+    }
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    color: var(--green);
+
+    .arrow {
+      display: block;
+      margin-right: 10px;
+      padding-top: 4px;
+    }
+
+    a {
+      ${({ theme }) => theme.mixins.inlineLink};
+      font-family: var(--font-mono);
+      font-size: var(--fz-sm);
+      font-weight: 600;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  .gatsby-image-outer-wrapper {
+    height: 100%;
+  }
+
   ${TransitionStyles};
+
   ${PrismStyles};
 `;
 
