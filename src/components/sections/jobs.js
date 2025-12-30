@@ -8,18 +8,20 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
-  max-width: 700px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 0;
+  min-height: 100vh;
 
   .inner {
     display: flex;
+    position: relative;
+    height: auto;
+    min-height: 400px;
 
     @media (max-width: 600px) {
       display: block;
-    }
-
-    // Prevent container from jumping
-    @media (min-width: 700px) {
-      min-height: 340px;
+      min-height: auto;
     }
   }
 `;
@@ -130,23 +132,53 @@ const StyledTabPanels = styled.div`
   position: relative;
   width: 100%;
   margin-left: 20px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: 600px) {
     margin-left: 0;
+    margin-top: 20px;
   }
 `;
 
 const StyledTabPanel = styled.div`
   width: 100%;
-  height: auto;
   padding: 10px 5px;
+  display: ${({ isActive }) => (isActive ? 'flex' : 'none')};
+  flex-direction: column;
+
+  .job-header {
+    flex-shrink: 0;
+    margin-bottom: 15px;
+  }
+
+  .job-content {
+    overflow-y: auto;
+    padding-right: 10px;
+    flex-grow: 1;
+
+    /* Custom scrollbar */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: var(--light-navy);
+      border-radius: 3px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--green);
+      border-radius: 3px;
+    }
+  }
 
   ul {
     ${({ theme }) => theme.mixins.fancyList};
+    margin-top: 0;
   }
 
   h3 {
-    margin-bottom: 2px;
+    margin: 0 0 5px 0;
     font-size: var(--fz-xxl);
     font-weight: 500;
     line-height: 1.3;
@@ -157,7 +189,7 @@ const StyledTabPanel = styled.div`
   }
 
   .range {
-    margin-bottom: 25px;
+    margin: 0 0 15px 0;
     color: var(--light-slate);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
@@ -283,20 +315,24 @@ const Jobs = () => {
                     tabIndex={activeTabId === i ? '0' : '-1'}
                     aria-labelledby={`tab-${i}`}
                     aria-hidden={activeTabId !== i}
-                    hidden={activeTabId !== i}>
-                    <h3>
-                      <span>{title}</span>
-                      <span className="company">
-                        &nbsp;@&nbsp;
-                        <a href={url} className="inline-link">
-                          {company}
-                        </a>
-                      </span>
-                    </h3>
-
-                    <p className="range">{range}</p>
-
-                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                    isActive={activeTabId === i}>
+                    <div className="job-header">
+                      <h3>
+                        <span>{title}</span>
+                        <span className="company">
+                          &nbsp;@&nbsp;
+                          <a
+                            href={url}
+                            className="inline-link"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            {company}
+                          </a>
+                        </span>
+                      </h3>
+                      <p className="range">{range}</p>
+                    </div>
+                    <div className="job-content" dangerouslySetInnerHTML={{ __html: html }} />
                   </StyledTabPanel>
                 </CSSTransition>
               );

@@ -1,14 +1,17 @@
 module.exports = {
   email: 'evansodhams@gmail.com',
+  resume: 'https://drive.google.com/file/d/your-resume-link',
+  title: 'Full-Stack Software Engineer | AI & Knowledge Graphs',
+  location: 'Nairobi, Kenya | Open to Remote Opportunities',
 
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/evansodhams',
+      url: 'https://github.com/evancedev',
     },
     {
-      name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/evance-okoth/',
+      name: 'LinkedIn',
+      url: 'https://linkedin.com/in/evance-o',
     },
     {
       name: 'Portfolio',

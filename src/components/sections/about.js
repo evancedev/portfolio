@@ -126,16 +126,26 @@ const About = () => {
   }, []);
 
   const skills = [
-    'Python',
+    'Python (FastAPI, Flask, PyTorch, TensorFlow)',
     'JavaScript (ES6+)',
-    'React',
-    'Node.js',
-    'MongoDB',
-    'Machine Learning',
-    'Data Annotation',
-    'Digital Marketing',
-    'Power BI',
-    'Docker',
+    'React & Next.js',
+    'Node.js & Express',
+    'PostgreSQL & MongoDB',
+    'Machine Learning & Deep Learning',
+    'Knowledge Graphs & GraphQL',
+    'RESTful & GraphQL APIs',
+    'Docker & Kubernetes',
+    'AWS/GCP/Azure',
+    'Data Mining & Big Data',
+    'Pandas, NumPy, Scikit-learn',
+    'Natural Language Processing',
+    'Computer Vision',
+    'Blockchain & Smart Contracts',
+    'Web3 & Ethereum',
+    'Solidity',
+    'IPFS & Decentralized Storage',
+    'Data Pipelines & ETL',
+    'Apache Spark & Hadoop',
   ];
 
   return (
@@ -146,28 +156,27 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              I’m an AI Engineer and Full-Stack Software Engineer with a strong knack for developing
-              scalable applications using MERN stack, passionate about designing and building
-              impactful, user-focused solutions. I thrive on integrating artificial intelligence and
-              modern web technologies to solve real-world challenges and drive meaningful change.
+              I'm a Full-Stack Software Engineer with 5+ years of experience designing, building,
+              and deploying scalable web applications and data-driven systems. I specialize in
+              backend APIs, frontend interfaces, relational databases, and cloud deployment, with
+              hands-on experience integrating machine learning models and knowledge graph–based
+              systems into production applications.
             </p>
 
             <p>
-              With a Masters Degree in Artificial Intelligence, I specialize in ML model
-              development, data annotation, and algorithm design. I've had the privilege of working
-              as a <a href="#jobs">Digital Skills Trainer under the Ajira Digital Program</a>,{' '}
-              <a href="#jobs">Computer Science Lecturer at Intel College</a>, and{' '}
-              <a href="#jobs">Founder of Qbitsage Solution</a> and{' '}
-              <a href="#jobs">Co-Founder of Cloud 7</a>. My main focus is in building scalable,
-              applications and integrating AI into them to solve real-world problems.
+              Currently, I'm the Founder & Lead AI Architect at <a href="#jobs">Mwangaza AI</a>,
+              where I'm architecting an AI-driven platform that aligns educational curricula with
+              real-world labor market demand using knowledge graphs and data-driven models.
+              Previously, I served as a <a href="#jobs">Lead Trainer</a> at eMobilis Mobile
+              Technology Institute under the Ajira Digital Program, and as a{' '}
+              <a href="#jobs">Computer Science Lecturer</a> at Intel College.
             </p>
 
             <p>
-              I've developed several AI-powered projects including <a href="#projects">Plymus</a>{' '}
-              (AI resume builder), <a href="#projects">UnifiedGigs</a> (job aggregation platform),
-              and <a href="#projects">IntelliCreate</a> (AI video creation platform). I'm also
-              certified in various AI and digital skills including Software Engineering and Data
-              Science from ALX Africa.
+              I hold a Master's degree in Artificial Intelligence from the Open University of Kenya
+              and a Bachelor's in Education (Technology Education - Computing) from Moi University.
+              My technical expertise spans across full-stack development, AI/ML, knowledge graphs,
+              and cloud technologies.
             </p>
 
             <p>Here are a few technologies I've been working with recently:</p>

@@ -37,6 +37,9 @@
       "eslint --fix"
     ]
   },
+  "resolutions": {
+    "graphql": "^14.7.0"
+  },
   "dependencies": {
     "animejs": "^3.1.0",
     "assert": "^2.1.0",
