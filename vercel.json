@@ -2,11 +2,21 @@
   "framework": "gatsby",
   "buildCommand": "yarn build:vercel",
   "outputDirectory": "public",
-  "installCommand": "yarn install",
+  "installCommand": "yarn install --ignore-engines",
   "build": {
     "env": {
-      "NODE_VERSION": "18.x",
+      "NODE_VERSION": "18",
       "NODE_OPTIONS": "--openssl-legacy-provider"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "^/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "^/.*",
+      "dest": "/index.html"
+    }
+  ]
 }
