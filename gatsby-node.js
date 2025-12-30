@@ -68,7 +68,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage({
       path: node.frontmatter.slug,
       component: postTemplate,
-      context: {},
+      context: {
+        path: node.frontmatter.slug,
+      },
     });
   });
 
@@ -141,6 +143,5 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         process: 'process/browser',
       }),
     ],
-    // Removed hashFunction to avoid cache conflicts
   });
 };
