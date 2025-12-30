@@ -74,19 +74,37 @@ const Footer = () => {
   });
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
+    // Skip in development or if no token is provided
+    if (
+      process.env.NODE_ENV !== 'production' ||
+      !(process.env.GITHUB_TOKEN || process.env.GATS_GITHUB_TOKEN)
+    ) {
+      setGitHubInfo({ stars: 0, forks: 0 });
       return;
     }
-    fetch('https://api.github.com/repos/EvansOdhams/portfolio')
-      .then(response => response.json())
+
+    fetch('https://api.github.com/repos/EvansOdhams/portfolio', {
+      headers: {
+        Authorization: `token ${process.env.GITHUB_TOKEN || process.env.GATS_GITHUB_TOKEN}`,
+      },
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('GitHub API request failed');
+        }
+        return response.json();
+      })
       .then(json => {
-        const { stargazers_count, forks_count } = json;
+        const { stargazers_count = 0, forks_count = 0 } = json;
         setGitHubInfo({
           stars: stargazers_count,
           forks: forks_count,
         });
       })
-      .catch(e => console.error(e));
+      .catch(e => {
+        console.error('GitHub API error:', e);
+        setGitHubInfo({ stars: 0, forks: 0 });
+      });
   }, []);
 
   return (

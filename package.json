@@ -15,7 +15,13 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=16.0.0"
+    "node": "18.x"
+  },
+  "vercel": {
+    "env": {
+      "NODE_VERSION": "18",
+      "NODE_OPTIONS": "--openssl-legacy-provider"
+    }
   },
   "browserslist": "> 0.25%, not dead",
   "scripts": {

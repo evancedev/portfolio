@@ -22,11 +22,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-source-github-api`,
-      options: {
-        token: process.env.GITHUB_TOKEN || process.env.GATS_GITHUB_TOKEN,
-        graphQLQuery: `
+    process.env.GITHUB_TOKEN || process.env.GATS_GITHUB_TOKEN
+      ? {
+        resolve: `gatsby-source-github-api`,
+        options: {
+          token: process.env.GITHUB_TOKEN || process.env.GATS_GITHUB_TOKEN,
+          graphQLQuery: `
           query {
             user(login: "EvansOdhams") {
               pinnedItems(first: 6, types: [REPOSITORY]) {
@@ -45,8 +46,9 @@ module.exports = {
             }
           }
         `,
-      },
-    },
+        },
+      }
+      : null,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
