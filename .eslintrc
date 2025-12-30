@@ -1,4 +1,48 @@
+# First, check what's in the file
+Get-Content .eslintrc
+
+# Delete the corrupted file
+Remove-Item .eslintrc -Force
+
+# Create the correct .eslintrc file with JSON content
+Set-Content -Path .eslintrc -Value @'
 {
   "root": true,
-  "extends": "@upstatement/eslint-config/react"
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "jsx-a11y"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react/prop-types": "warn",
+    "react/react-in-jsx-scope": "off"
+  }
 }
+'@
+
+# Verify the content
+Get-Content .eslintrc
