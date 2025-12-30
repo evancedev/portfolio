@@ -8,16 +8,4 @@ package-lock.json
 /public
 .DS_Store
 
-# Environment variables
-.env.development
-.env.production
-.env.*.local
-
-# Editor directories and files
 .vscode/
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?

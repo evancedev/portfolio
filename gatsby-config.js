@@ -1,7 +1,3 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
-
 const config = require('./src/config');
 
 module.exports = {
@@ -22,33 +18,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
-    process.env.GITHUB_TOKEN || process.env.GATS_GITHUB_TOKEN
-      ? {
-        resolve: `gatsby-source-github-api`,
-        options: {
-          token: process.env.GITHUB_TOKEN || process.env.GATS_GITHUB_TOKEN,
-          graphQLQuery: `
-          query {
-            user(login: "EvansOdhams") {
-              pinnedItems(first: 6, types: [REPOSITORY]) {
-                nodes {
-                  ... on Repository {
-                    name
-                    description
-                    url
-                    stargazers {
-                      totalCount
-                    }
-                    forkCount
-                  }
-                }
-              }
-            }
-          }
-        `,
-        },
-      }
-      : null,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -242,21 +211,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          'UA-45666519-2', // Google Analytics / GA
-        ],
-        // This object is used for configuration specific to this plugin
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: true,
-          // Setting this parameter is also optional
-          respectDNT: true,
-          // Avoids sending pageview hits from custom paths
-          exclude: [],
-        },
+        trackingId: 'UA-45666519-2',
       },
     },
   ],
