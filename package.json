@@ -15,11 +15,11 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   },
   "vercel": {
     "env": {
-      "NODE_VERSION": "18",
+      "NODE_VERSION": "20",
       "NODE_OPTIONS": "--openssl-legacy-provider"
     }
   },
